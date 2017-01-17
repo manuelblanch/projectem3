@@ -12,10 +12,6 @@ package projectem3;
  */
 public class Projectem3 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
         // TODO code application logic here
         String tipus = null;
         String marca = null;
@@ -24,4 +20,4 @@ public class Projectem3 {
         boolean omplit = false;
     }
     
-}
+
