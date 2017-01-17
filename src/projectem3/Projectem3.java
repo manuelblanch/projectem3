@@ -17,6 +17,11 @@ public class Projectem3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String tipus = null;
+        String marca = null;
+        int id = 0;
+        boolean ssd = false;
+        boolean omplit = false;
     }
     
 }
