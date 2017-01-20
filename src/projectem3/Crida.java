@@ -16,6 +16,9 @@ package projectem3;
 
 public static void main(String[] args){
     
+    //els metodes de les clases no son variables locals
+    //la diferencia de les propietas a les variables es que si estan inicialitzades
+    //les propietas de les variables se autoassignen
     Metodes.ubicacioDins();
     Metodes.ubicacioDins(0F);
     Metodes.ubicacioDIns(0);
@@ -28,7 +31,18 @@ public static void main(String[] args){
     //si fem control space tambe podem accedir als esatics.
     //als estatics nomes podem acedir instanciant objectes de la mateixa clase
     
+    //ambit
+    
+    //les variables locals no tenen valor per defecte
+    
+    int i;
+    for (i=0; i < args.length; i++) {
+        String arg = args[i];
+    }
+    i=2;
 }
+
+
 
 
 }

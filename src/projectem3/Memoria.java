@@ -16,6 +16,10 @@ public class Memoria {
     private double preu = 0;
     private boolean ssd = false;
     private boolean omplit = false;
+    
+//    public Memoria(String marca){
+//        this.marca=marca;
+//    }
 
     @Override
     public String toString() {
