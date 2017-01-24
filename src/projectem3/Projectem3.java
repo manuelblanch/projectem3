@@ -19,15 +19,21 @@ public class Projectem3 {
     private static char esSSD;
     private static boolean SSD;
     private static String memoria;
-    
+    private static Memoria[] array=new Memoria[MAX_MEMORIES];
     
     public static void main(String[] args){
         // Array on guardem informació de les memòries
+        //Scanner ent = new Scanner(System.in);
         
         Memoria[] array=new Memoria[MAX_MEMORIES];
         
         for (int i = 0; i < array.length; i++) {
             array[i]=new Memoria();
+        }
+        
+        for (int i = 0; i < array.length; i++){
+            array[i]= new Memoria();
+            array[i].setOmplit(false);
         }
         
         int i = 0;

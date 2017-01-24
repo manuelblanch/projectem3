@@ -20,6 +20,8 @@ public class Memoria {
 //    public Memoria(String marca){
 //        this.marca=marca;
 //    }
+    public Memoria() {
+    }
 
     @Override
     public String toString() {
