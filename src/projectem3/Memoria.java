@@ -16,7 +16,8 @@ public class Memoria {
     private double preu = 0;
     private boolean ssd = false;
     private boolean omplit = false;
-    
+    private boolean memoria;
+
 //    public Memoria(String marca){
 //        this.marca=marca;
 //    }
@@ -25,7 +26,18 @@ public class Memoria {
 
     @Override
     public String toString() {
-        return "Memoria{" + "tipus=" + tipus + ", marca=" + marca + ", preu=" + preu + ", ssd=" + ssd + '}';
+        
+//        String s="\ntipus: " + tipus+ 
+//                "\nmarca: " + marca+
+//                "\npreu: " + preu;
+//        if(memoria) s=s+"\nEs SSD";
+//        else s=s+"\nEs HD";
+//                return s;
+                 //return "Memoria{" + "tipus=" + tipus + ", marca=" + marca + ", preu=" + preu + ", ssd=" + ssd + '}';
+        return "\ntipus: "+tipus+
+                "\nmarca: "+marca+
+                "\npreu: "+preu+
+        (memoria?"\nEs SSD" : "\nEs HD");
     }
 
     public String getTipus() {
