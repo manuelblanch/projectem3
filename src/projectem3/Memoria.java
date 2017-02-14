@@ -11,11 +11,11 @@ package projectem3;
  */
 public class Memoria {
 
-    private String tipus = null;
-    private String marca = null;
-    private double preu = 0;
-    private boolean ssd = false;
-    private boolean omplit = false;
+    private String tipus;
+    private String marca;
+    private double preu;
+    private boolean ssd;
+    private boolean omplit;
     private boolean memoria;
 
 //    public Memoria(String marca){
@@ -23,7 +23,15 @@ public class Memoria {
 //    }
     public Memoria() {
     }
-
+    
+    public Memoria(String marca) {
+        this.marca=marca;
+    }
+    
+    public Memoria(String marca, String tipus){
+        this.marca=marca;
+        this.tipus=tipus;
+    }
     @Override
     public String toString() {
 
