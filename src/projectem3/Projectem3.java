@@ -28,6 +28,10 @@ public class Projectem3 {
         Memoria[] array = new Memoria[MAX_MEMORIES];
         // int opcio;
         Memoria m = null; //apuntem a les memories de les caselles
+        
+         
+
+    public static void inicialitzarVariables() {
 
         for (int i = 0; i < array.length; i++) {
             array[i] = new Memoria();
@@ -38,7 +42,24 @@ public class Projectem3 {
             array[i].setOmplit(false);
         }
 
-        int i;
+    }
+
+    public static void demanarOpcio() {
+        Scanner ent = new Scanner(System.in);
+
+        System.out.println("\n\nMenú de l'aplicació.");
+        System.out.println("0. Sortir.");
+        System.out.println("1. Introduïr pilot.");
+        System.out.println("2. Modificar pilot.");
+        System.out.println("3. Borrar pilot.");
+        System.out.println("4. Llistar pilots.");
+        System.out.println("5. Recuperar pilot borrat.");
+        opcio = ent.skip("[\r\n]*").nextInt();
+
+    }
+
+
+int i;
 
         for (i = 0; i < array.length && array[i].isOmplit(); i++);
         if (i != array.length) {
@@ -205,84 +226,32 @@ public class Projectem3 {
                     break;case 3:                                     //3. Borrar pilot
                     if (omplit) {
                         do {
-                            System.out.println("\nVols vore el pilot?(S/N):");
+                            System.out.println("\nVols vore el disc?(S/N):");
                             siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
                                                                                                 //per tant només haurem de tractar les lletres majúscules
                         } while (siNo != 'S' && siNo != 'N');
                         if (siNo == 'S'){
-                            System.out.println("\nNom: "+marca);
-                            System.out.println("Dorsal: "+tipus);
-                            System.out.println("Diners guanyats: "+preu);
+                            System.out.println("\nMemoria: "+marca);
+                            System.out.println("Marca: "+tipus);
+                            System.out.println("Preu: "+preu);
                             if(home) System.out.println("És SSD");
                             else System.out.println("És HD");
                         }     
 
                         do {
-                            System.out.println("\nVols borrar el pilot?(S/N):");
+                            System.out.println("\nVols borrar el disc dur?(S/N):");
                             siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
                                                                                                 //per tant només haurem de tractar les lletres majúscules
                         } while (siNo != 'S' && siNo != 'N');
                         if (siNo == 'S'){
                             omplit = false;       
-                            System.out.println("Pilot borrat correctament.");
+                            System.out.println("Disc dur borrat correctament.");
                         } else System.out.println("Pilot no borrat.");  
                         
                     } else {
                         System.out.println("\nNo hi ha pilots per borrar, si vols primer crea'n.");
                     }
-                    break;
-                    
-//                case 3: //3. Borrar memoria
-//                    siNo = 'N';
-//                    for (i = 0; i < array.length; i++) {
-//                        m = array[i];
-//                        if (m.isOmplit()) {
-//                            System.out.println(m);
-//                            do {
-//                                System.out.println("\nVols borrar el pilot");
-//                                siNo = ent.skip("[\r\n").nextLine().toUpperCase().charAt(0);
-//                            } while (siNo != 'S' && siNo != 'N');
-//
-//                        }
-//                        if (siNo == 'S') {
-//                            break;
-//                        }
-//                    }
-//                    if (i<array.length) {
-//                        char siNo;
-//                        do {
-//                            System.out.println("\nVols vore la memòria?(S/N):");
-//                            siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
-//                            //per tant només haurem de tractar les lletres majúscules
-//                        } while (siNo != 'S' && siNo != 'N');
-//                        m.setOmplit(false);
-////                        if (siNo == 'S') {
-////                            System.out.println("\nMemoria: " + memoria);
-////                            System.out.println("Tipusl: " + tipus);
-////                            System.out.println("Preu: " + preu);
-////                            if (SSD) {
-////                                System.out.println("És SSD");
-////                            } else {
-////                                System.out.println("És HD");
-////                            }
-////                        }
-//
-//                        do {
-//                            System.out.println("\nVols borrar la memoria?(S/N):");
-//                            siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
-//                            //per tant només haurem de tractar les lletres majúscules
-//                        } while (siNo != 'S' && siNo != 'N');
-//                        if (siNo == 'S') {
-//                            omplit = false;
-//                            System.out.println("Memoria borrada correctament.");
-//                        } else {
-//                            System.out.println("Memoria no borrada.");
-//                        }
-//
-//                    } else {
-//                        System.out.println("\nNo s'ha borrat el pilot.");
-//                    }
-//                    break;
+                    break;       
 
                 case 4:                                     //4. Llistar memories
                     if (omplit) {
