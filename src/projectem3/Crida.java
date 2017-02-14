@@ -11,9 +11,6 @@ package projectem3;
  * @author manuel
  */public class Crida {
     
-
-
-
 public static void main(String[] args){
     
     //els metodes de les clases no son variables locals

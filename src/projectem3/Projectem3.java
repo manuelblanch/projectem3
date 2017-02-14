@@ -123,6 +123,12 @@ public static void introduirMemoria() {
 public static void modificarMemoria() {
     
     Scanner ent = new Scanner(System.in);
+    char siNo = 'N';
+        int cont = 1, i;
+for (i = 0; i < array.length && siNo != 'S' && siNo != 'F'; i++) {
+    
+}
+    
     
 }
 

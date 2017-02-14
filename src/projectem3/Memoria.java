@@ -35,13 +35,6 @@ public class Memoria {
     @Override
     public String toString() {
 
-//        String s="\ntipus: " + tipus+ 
-//                "\nmarca: " + marca+
-//                "\npreu: " + preu;
-//        if(memoria) s=s+"\nEs SSD";
-//        else s=s+"\nEs HD";
-//                return s;
-        //return "Memoria{" + "tipus=" + tipus + ", marca=" + marca + ", preu=" + preu + ", ssd=" + ssd + '}';
         return "\ntipus: " + tipus
                 + "\nmarca: " + marca
                 + "\npreu: " + preu
