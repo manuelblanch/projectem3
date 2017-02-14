@@ -49,16 +49,53 @@ public class Projectem3 {
 
         System.out.println("\n\nMenú de l'aplicació.");
         System.out.println("0. Sortir.");
-        System.out.println("1. Introduïr pilot.");
-        System.out.println("2. Modificar pilot.");
-        System.out.println("3. Borrar pilot.");
-        System.out.println("4. Llistar pilots.");
-        System.out.println("5. Recuperar pilot borrat.");
+        System.out.println("1. Introduïr memoria.");
+        System.out.println("2. Modificar memoria.");
+        System.out.println("3. Borrar memoria.");
+        System.out.println("4. Llistar memories.");
+        System.out.println("5. Recuperar memoria borrada.");
         opcio = ent.skip("[\r\n]*").nextInt();
 
     }
+    
+    public static void tractarOpcio() {
+        
+    }
 
+    public static boolean opcioFinal() {
+        return opcio == 0;
+    }
 
+public static void introduirMemoria() {
+    
+    Scanner ent = new Scanner(System.in);
+    
+}
+
+public static void modificarMemoria() {
+    
+    Scanner ent = new Scanner(System.in);
+    
+}
+
+ public static void borrarPilot() {
+     
+     Scanner ent = new Scanner(System.in);
+     
+ }
+ 
+ 
+public static void llistarMemories() {
+    
+    Scanner ent = new Scanner(System.in);
+    
+}
+
+ public static void recuperarMemoria(){
+     
+     Scanner ent = new Scanner(System.in);
+     
+ }
 int i;
 
         for (i = 0; i < array.length && array[i].isOmplit(); i++);
