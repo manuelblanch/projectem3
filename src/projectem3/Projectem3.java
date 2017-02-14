@@ -23,14 +23,13 @@ public class Projectem3 {
     private static int opcio;
 
     public static void main(String[] args) {
-        
+
         // Array on guardem informació de les memòries
         //Scanner ent = new Scanner(System.in);
-
         Memoria[] array = new Memoria[MAX_MEMORIES];
         // int opcio;
         Memoria m = null; //apuntem a les memories de les caselles
-        
+
     }
 
     public static void inicialitzarVariables() {
@@ -59,9 +58,9 @@ public class Projectem3 {
         opcio = ent.skip("[\r\n]*").nextInt();
 
     }
-    
+
     public static void tractarOpcio() {
-        
+
         switch (opcio) {
             case 0:                             //0. Sortir
                 System.out.println("Has acat!!");
@@ -91,11 +90,11 @@ public class Projectem3 {
         return opcio == 0;
     }
 
-public static void introduirMemoria() {
-    
-    Scanner ent = new Scanner(System.in);
-    
-     int i;
+    public static void introduirMemoria() {
+
+        Scanner ent = new Scanner(System.in);
+
+        int i;
         for (i = 0; i < array.length && array[i].isOmplit(); i++);
         //Si no hem arribat al final és per que hem trobat una casella buida (no omplida)
         if (i < array.length) {
@@ -116,41 +115,113 @@ public static void introduirMemoria() {
             array[i].setOmplit(true);
         } else {
             System.out.println("\nNo hi caben més memories, si vols, primer borra algunes de elles.");
-}
-    
-}
+        }
 
-public static void modificarMemoria() {
-    
-    Scanner ent = new Scanner(System.in);
-    char siNo = 'N';
+    }
+
+    public static void modificarMemoria() {
+
+        Scanner ent = new Scanner(System.in);
+        char siNo = 'N';
         int cont = 1, i;
-for (i = 0; i < array.length && siNo != 'S' && siNo != 'F'; i++) {
-    
-}
-    
-    
-}
+        for (i = 0; i < array.length && siNo != 'S' && siNo != 'F'; i++) {
 
- public static void borrarMemoria() {
-     
-     Scanner ent = new Scanner(System.in);
-     
- }
- 
- 
-public static void llistarMemories() {
-    
-    Scanner ent = new Scanner(System.in);
-    
-}
+            if (array[i].isOmplit()) {
+                System.out.format("\nPilot %d:\n", cont++);
+                System.out.println(array[i].toString());
+                do {
+                    System.out.println("\nVols modificar el pilot(S/N) o finalitzar la cerca (F)?:");
+                    siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
+                    //per tant només haurem de tractar les lletres majúscules
+                } while (siNo != 'S' && siNo != 'N' && siNo != 'F');
+            }
+            if (siNo == 'S') {
+                break;
+            }
+        }
+        //Si l'usuari ha contestat que sí és que ha triat un pilot per modificar    
+        if (siNo == 'S') {
 
- public static void recuperarMemoria(){
-     
-     Scanner ent = new Scanner(System.in);
-     
- }
-int i;
+            System.out.println("\nMarca: " + array[i].getMarca());
+            do {
+                System.out.println("\nVols modificar la marca?(S/N):");
+                siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+            } while (siNo != 'S' && siNo != 'N');
+            if (siNo == 'S') {
+                System.out.print("Nova marca a introduir: ");
+                array[i].setMarca(ent.skip("[\r\n]*").nextLine());
+            }
+
+            System.out.println("\nTipus: " + array[i].getTipus());
+            do {
+                System.out.println("\nVols modificar el tipus de discl?(S/N):");
+                siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+            } while (siNo != 'S' && siNo != 'N');
+            if (siNo == 'S') {
+                System.out.print("Nou tipus: ");
+                array[i].setTipus(ent.skip("[\r\n]*").nextLine());
+            }
+
+            System.out.println("\nPreu: " + array[i].getPreu());
+            do {
+                System.out.println("\nVols modificar els preu?(S/N):");
+                siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+            } while (siNo != 'S' && siNo != 'N');
+            if (siNo == 'S') {
+                System.out.print("Nou preu: ");
+                array[i].setPreu(ent.skip("[\r\n]*").nextDouble());
+            }
+
+            if (array[i].isSsd()) {
+                System.out.println("\nÉs SSD");
+            } else {
+                System.out.println("\nÉs HD");
+            }
+            do {
+                System.out.println("\nVols modificar el gènere?(S/N):");
+                siNo = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+            } while (siNo != 'S' && siNo != 'N');
+            if (siNo == 'S') {
+                char esSsd;
+                do {
+                    System.out.println("És SSD o HD?(SSD/HD):");
+                    esSsd = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+                } while (esSsd != 'SSD' && esSsd != 'HD');
+                array[i].setSsd(esSsd == 'HD');     //si esSsd conté la 'H' home serà true i sinó false. Fa el mateix que un if_else però és molt més curt
+                System.out.print("Nou gènere: ");
+                if (array[i].isSsd()) {
+                    System.out.println("home");
+                } else {
+                    System.out.println("dona");
+                }
+            }
+
+            System.out.println("Pilot modificat correctament.");
+
+        } else {
+            System.out.println("\nNo hi ha pilots per modificar, o no n'has triat cap per modificar.");
+        }
+
+    }
+
+    public static void borrarMemoria() {
+
+        Scanner ent = new Scanner(System.in);
+
+    }
+
+    public static void llistarMemories() {
+
+        Scanner ent = new Scanner(System.in);
+
+    }
+
+    public static void recuperarMemoria() {
+
+        Scanner ent = new Scanner(System.in);
+
+    }
+    int i;
 
 //        for (i = 0; i < array.length && array[i].isOmplit(); i++);
 //        if (i != array.length) {
@@ -402,5 +473,4 @@ int i;
 //        } while (opcio != 0);
 //
 //    }
-
 }
