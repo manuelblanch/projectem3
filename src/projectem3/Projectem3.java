@@ -20,8 +20,10 @@ public class Projectem3 {
     private static String memoria;
     private static Memoria[] array = new Memoria[MAX_MEMORIES];
     private static char siNo;
+    private static int opcio;
 
     public static void main(String[] args) {
+        
         // Array on guardem informació de les memòries
         //Scanner ent = new Scanner(System.in);
 
@@ -29,7 +31,7 @@ public class Projectem3 {
         // int opcio;
         Memoria m = null; //apuntem a les memories de les caselles
         
-         
+    }
 
     public static void inicialitzarVariables() {
 
@@ -60,6 +62,31 @@ public class Projectem3 {
     
     public static void tractarOpcio() {
         
+        switch (opcio) {
+            case 0:                             //0. Sortir
+                System.out.println("Has acat!!");
+                break;
+            case 1:                             //1. Introduïr memoria
+                introduirMemoria();
+                break;
+            case 2:                             //2. Modificar memoria
+                modificarMemoria();
+                break;
+            case 3:                                     //3. Borrar memoria
+                borrarMemoria();
+                break;
+            case 4:                                     //4. Llistar memories
+                llistarMemories();
+                break;
+            case 5:                                     //5. Recuperar memoria borrada
+                recuperarMemoria();
+                break;
+            default:
+                System.out.println("\nOpció incorrecta!!");
+        }
+
+
+        
     }
 
     public static boolean opcioFinal() {
@@ -78,7 +105,7 @@ public static void modificarMemoria() {
     
 }
 
- public static void borrarPilot() {
+ public static void borrarMemoria() {
      
      Scanner ent = new Scanner(System.in);
      
