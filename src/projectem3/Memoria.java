@@ -16,7 +16,8 @@ public class Memoria {
     private double preu;
     private boolean ssd;
     private boolean omplit;
-    private boolean memoria;
+    //private boolean memoria;
+    //private boolean esssd;
 
 //    public Memoria(String marca){
 //        this.marca=marca;
@@ -38,7 +39,7 @@ public class Memoria {
         return "\ntipus: " + tipus
                 + "\nmarca: " + marca
                 + "\npreu: " + preu
-                + (memoria ? "\nEs SSD" : "\nEs HD");
+                + (ssd ? "\nEs SSD" : "\nEs HD");
     }
 
     public String getTipus() {

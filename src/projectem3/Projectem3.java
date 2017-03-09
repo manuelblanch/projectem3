@@ -14,12 +14,12 @@ import java.util.Scanner;
 public class Projectem3 {
 
     public static final int MAX_MEMORIES = 2;
-    private static boolean home;
-    private static char esSSD;
-    private static boolean SSD;
-    private static String memoria;
+    //private static boolean home;
+    //private static char esSSD;
+    //private static boolean SSD;
+    //private static String memoria;
     private static Memoria[] array = new Memoria[MAX_MEMORIES];
-    private static char siNo;
+    //private static char siNo;
     private static int opcio;
 
     public static void main(String[] args) {
@@ -104,13 +104,13 @@ public class Projectem3 {
             System.out.println("Preu:");
             array[i].setPreu(ent.skip("[\r\n]*").nextDouble());
 
-            char esSSD;
+            char isSSD;
             do {
-                System.out.println("És SSD o HD?(SSD/HD):");
-                esSSD = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
+                System.out.println("És SSD o HD?(S/H):");
+                isSSD = ent.skip("[\r\n]*").nextLine().toUpperCase().charAt(0); //usem toUpperCase() que traduix el text introduït per l'usuari a majúscules, 
                 //per tant només haurem de tractar les lletres majúscules
-            } while (esSSD != 'S' && esSSD != 'H');
-            array[i].setSsd(esSSD == 'S');     //si esSSD conté la 'S' SSD serà true i sinó false. Fa el mateix que un if_else però és molt més curt
+            } while (isSSD != 'H' &&  isSSD != 'S');
+            array[i].setSsd(isSSD == 'S');     //si esSSD conté la 'S' SSD serà true i sinó false. Fa el mateix que un if_else però és molt més curt
             array[i].setOmplit(true);
         } else {
             System.out.println("\nNo hi caben més memories, si vols, primer borra algunes de elles.");
