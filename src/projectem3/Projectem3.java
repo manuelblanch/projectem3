@@ -14,7 +14,6 @@ import java.util.Scanner;
 public class Projectem3 {
 
     public static final int MAX_MEMORIES = 2;
-    //private static boolean home;
     //private static char esSSD;
     //private static boolean SSD;
     //private static String memoria;
@@ -24,7 +23,6 @@ public class Projectem3 {
 
     public static void main(String[] args) {
 
-        
         inicialitzarVariables();
         do {
             demanarOpcio();
@@ -32,7 +30,6 @@ public class Projectem3 {
         } while (!opcioFinal());
 
 }
-    
 
     public static void inicialitzarVariables() {
 
@@ -64,10 +61,10 @@ public class Projectem3 {
             case 0:                             //0. Sortir
                 System.out.println("Has sortit de l'aplicació de forma correcta!!");
                 break;
-            case 1:                             //1. Introduïr memoria
+            case 1:                                      //1. Introduïr memoria
                 introduirMemoria();
                 break;
-            case 2:                             //2. Modificar memoria
+            case 2:                                     //2. Modificar memoria
                 modificarMemoria();
                 break;
             case 3:                                     //3. Borrar memoria
